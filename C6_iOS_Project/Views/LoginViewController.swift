@@ -15,15 +15,14 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Oculta el navigationItem en este ViewController
-        self.navigationItem.setHidesBackButton(true, animated: false) // Para ocultar el botón de retroceso
-        self.navigationController?.navigationBar.isHidden = true // Para ocultar toda la barra de navegación (título y botones)
+        CustomConfig.configureViewController(self)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        // Asegúrate de restaurar la visibilidad del navigationItem cuando salgas de este ViewController
-        self.navigationItem.setHidesBackButton(false, animated: false)
-        self.navigationController?.navigationBar.isHidden = false
+        CustomConfig.restoreViewController(self)
+    }
+    @IBAction func btnNewUser(_ sender: UIButton) {
+        performSegue(withIdentifier: "newUserView", sender: self)
     }
 }
