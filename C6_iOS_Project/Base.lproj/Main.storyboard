@@ -103,7 +103,7 @@
                                     <color key="baseBackgroundColor" name="mainPurple"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B8f-zS-rRy"/>
+                                    <action selector="btnIniciar:" destination="loD-Aw-AAA" eventType="touchUpInside" id="UzG-51-GfX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDV-5w-2gg">
@@ -118,7 +118,7 @@
                                     <fontDescription key="titleFontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="btnNewUser:" destination="loD-Aw-AAA" eventType="touchUpInside" id="NYp-Cb-e13"/>
+                                    <action selector="btnNewUser:" destination="loD-Aw-AAA" eventType="touchUpInside" id="feO-n4-b9g"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imgLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gn6-OY-7vw">
@@ -131,6 +131,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="4PT-0V-bgz"/>
                     <connections>
+                        <outlet property="txtClave" destination="ePk-wf-DfJ" id="s1A-hQ-Tzx"/>
+                        <outlet property="txtUsuario" destination="ezR-YD-JLa" id="e7D-qm-d5S"/>
                         <segue destination="l2P-Fg-UYb" kind="show" identifier="newUserView" id="z6R-tH-lSo"/>
                     </connections>
                 </viewController>
@@ -241,7 +243,7 @@
                     <navigationItem key="navigationItem" id="rnE-ZY-29Y"/>
                     <connections>
                         <outlet property="switchTermsOfUse" destination="kcn-Lv-vXE" id="mOO-Tl-j8L"/>
-                        <outlet property="txtConfirmPassword" destination="BsS-ZV-xv6" id="mJW-y4-vKD"/>
+                        <outlet property="txtEdad" destination="BsS-ZV-xv6" id="crG-3O-eu9"/>
                         <outlet property="txtEmail" destination="6Hr-c5-emm" id="lNX-dJ-Hq6"/>
                         <outlet property="txtName" destination="rlv-Er-LR6" id="ug8-gJ-iJX"/>
                         <outlet property="txtPassword" destination="8do-ai-EZy" id="JO8-C4-YDQ"/>
