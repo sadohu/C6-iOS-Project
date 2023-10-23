@@ -16,7 +16,6 @@ class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource {
     override func awakeFromNib() {
         super.awakeFromNib();
         cvTipos.dataSource = self;
-        fillData();
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -25,7 +24,7 @@ class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = cvTipos.dequeueReusableCell(withReuseIdentifier: "tipo", for: indexPath) as! MainTableCollectionViewCell;
-        item.tipo.text = listCategoria[indexPath.row].nombre;
+        item.tipo.text = listCategoria[indexPath.row].tipo;
         
         let img = listCategoria[indexPath.row].imagen
         if let url = URL(string: img) {
@@ -57,13 +56,6 @@ class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource {
         return renderer.image { (context) in
             image.draw(in: CGRect(origin: .zero, size: targetSize))
         }
-    }
-    
-    func fillData(){
-        listCategoria.append(Categoria(id: 1, idCategoria: 1, nombre: "Categoria 1", tipo: "Tipo 1", imagen: "https://styles.redditmedia.com/t5_8btpsf/styles/communityIcon_achbnr7vdgxa1.png"));
-        listCategoria.append(Categoria(id: 2, idCategoria: 1, nombre: "Categoria 2", tipo: "Tipo 2", imagen: "https://styles.redditmedia.com/t5_8btpsf/styles/communityIcon_achbnr7vdgxa1.png"));
-        listCategoria.append(Categoria(id: 3, idCategoria: 1, nombre: "Categoria 3", tipo: "Tipo 3", imagen: "https://styles.redditmedia.com/t5_8btpsf/styles/communityIcon_achbnr7vdgxa1.png"));
-        listCategoria.append(Categoria(id: 4, idCategoria: 1, nombre: "Categoria 4", tipo: "Tipo 4", imagen: "https://styles.redditmedia.com/t5_8btpsf/styles/communityIcon_achbnr7vdgxa1.png"));
     }
 
 }
