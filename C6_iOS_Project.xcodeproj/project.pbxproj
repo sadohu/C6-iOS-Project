@@ -13,6 +13,9 @@
 		41688A872AE5D4BC00760A57 /* ApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A862AE5D4BC00760A57 /* ApiViewController.swift */; };
 		41688A8A2AE5D51D00760A57 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A892AE5D51D00760A57 /* Categoria.swift */; };
 		41688A8C2AE5D90300760A57 /* MTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A8B2AE5D90300760A57 /* MTableViewCell.swift */; };
+		41688A902AE5E91800760A57 /* MainItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A8F2AE5E91800760A57 /* MainItemTableViewCell.swift */; };
+		41688A942AE5EACD00760A57 /* MainTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A932AE5EACD00760A57 /* MainTableCollectionViewCell.swift */; };
+		41688A962AE5EEC200760A57 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A952AE5EEC200760A57 /* MainViewController.swift */; };
 		41A81AF42ACFAE8E0056A2C5 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A81AF32ACFAE8E0056A2C5 /* NewUserViewController.swift */; };
 		41A81AF82ACFB2450056A2C5 /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A81AF72ACFB2450056A2C5 /* CustomConfig.swift */; };
 		41B92C382ACE704100FB17C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B92C372ACE704100FB17C8 /* AppDelegate.swift */; };
@@ -32,6 +35,9 @@
 		41688A862AE5D4BC00760A57 /* ApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiViewController.swift; sourceTree = "<group>"; };
 		41688A892AE5D51D00760A57 /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 		41688A8B2AE5D90300760A57 /* MTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTableViewCell.swift; sourceTree = "<group>"; };
+		41688A8F2AE5E91800760A57 /* MainItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemTableViewCell.swift; sourceTree = "<group>"; };
+		41688A932AE5EACD00760A57 /* MainTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableCollectionViewCell.swift; sourceTree = "<group>"; };
+		41688A952AE5EEC200760A57 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		41A81AF32ACFAE8E0056A2C5 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		41A81AF72ACFB2450056A2C5 /* CustomConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
 		41B92C342ACE704100FB17C8 /* C6_iOS_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C6_iOS_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +85,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		41688A8E2AE5E8D300760A57 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				41688A8F2AE5E91800760A57 /* MainItemTableViewCell.swift */,
+				41688A932AE5EACD00760A57 /* MainTableCollectionViewCell.swift */,
+				41688A952AE5EEC200760A57 /* MainViewController.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		41B92C2B2ACE704100FB17C8 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +134,7 @@
 		41B92C4B2ACE996500FB17C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41688A8E2AE5E8D300760A57 /* MainView */,
 				41688A812AE5D44C00760A57 /* CategoriaViews */,
 				41B92C4C2ACE998200FB17C8 /* LoginViewController.swift */,
 				41A81AF32ACFAE8E0056A2C5 /* NewUserViewController.swift */,
@@ -267,13 +284,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B92C4D2ACE998200FB17C8 /* LoginViewController.swift in Sources */,
+				41688A902AE5E91800760A57 /* MainItemTableViewCell.swift in Sources */,
 				41B92C3C2ACE704100FB17C8 /* ViewController.swift in Sources */,
 				41688A852AE5D4AD00760A57 /* NueCateViewController.swift in Sources */,
 				41A81AF82ACFB2450056A2C5 /* CustomConfig.swift in Sources */,
 				41688A8C2AE5D90300760A57 /* MTableViewCell.swift in Sources */,
 				41688A832AE5D49B00760A57 /* EditarCateViewController.swift in Sources */,
+				41688A962AE5EEC200760A57 /* MainViewController.swift in Sources */,
 				41A81AF42ACFAE8E0056A2C5 /* NewUserViewController.swift in Sources */,
 				41B92C382ACE704100FB17C8 /* AppDelegate.swift in Sources */,
+				41688A942AE5EACD00760A57 /* MainTableCollectionViewCell.swift in Sources */,
 				41688A872AE5D4BC00760A57 /* ApiViewController.swift in Sources */,
 				41B92C3A2ACE704100FB17C8 /* SceneDelegate.swift in Sources */,
 				41688A8A2AE5D51D00760A57 /* Categoria.swift in Sources */,
