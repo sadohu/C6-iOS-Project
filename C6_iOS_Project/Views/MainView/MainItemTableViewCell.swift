@@ -25,11 +25,7 @@ class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = cvTipos.dequeueReusableCell(withReuseIdentifier: "tipo", for: indexPath) as! MainTableCollectionViewCell;
-        item.tipo.text = listCategoria[indexPath.row].tipo;
-        
-        
-        
-       
+        item.tipo.text = listCategoria[indexPath.row].nombre;
         
         let img = listCategoria[indexPath.row].imagen
         if let url = URL(string: img) {
