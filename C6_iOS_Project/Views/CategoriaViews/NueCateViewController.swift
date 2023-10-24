@@ -42,7 +42,7 @@ class NueCateViewController: UIViewController {
                 //convertir a JSON el valor del parametro bean PARA SERIALIZAR JSON ENCODER
                 let jsonData = try JSONEncoder().encode(bean)
                 //almacenamos la URL de la API en una variable URLAPI
-                let URLAPI="https://9e44-45-5-69-231.ngrok-free.app/categoria/registrar"
+                let URLAPI="https://9b87-45-5-69-231.ngrok-free.app/categoria/registrar"
                 //convertimos a URL la variable URLAPI
                 let urlRegistrar=URL(string: URLAPI)
                 //creamos variable request que almacena un URLRequest y le pasamos en parametro

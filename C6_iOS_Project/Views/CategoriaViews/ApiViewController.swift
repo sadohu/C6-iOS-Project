@@ -65,7 +65,7 @@ class ApiViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
                         //con la variable medicamentos que tiene la data de la URL
                         self.listaCategorias = categoria
                         //imprimimos
-                        print(categoria)
+//                        print(categoria)
                         //refrescar la tabla debe ser asincrona en segundo plano por hilo
                         DispatchQueue.main.async {
                             self.myTableView.reloadData()

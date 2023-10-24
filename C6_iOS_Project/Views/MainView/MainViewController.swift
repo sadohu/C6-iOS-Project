@@ -19,14 +19,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad();
         tvCategorias.dataSource = self;
         tvCategorias.rowHeight = 200;
-//        fillData();
-        CustomConfig.getCategoriasFromApi(delegate: self);
-        
     }
     
     func dataLoadedSuccessfully(data: [Categoria]) {
         listFromApi = data;
         listCategoria = CustomConfig.getCategoriasSection(listFromApi);
+        ids = [];
+        nombre = [];
         dataForCells(listCategoria);
         tvCategorias.reloadData();
     }
@@ -34,6 +33,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        CustomConfig.getCategoriasFromApi(delegate: self);
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,18 +74,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let view = tvCategorias.dequeueReusableCell(withIdentifier: "tvCellCategoria") as! MainItemTableViewCell;
+        let tableCell = tvCategorias.dequeueReusableCell(withIdentifier: "tvCellCategoria") as! MainItemTableViewCell;
         let categoryId = self.ids[indexPath.section];
         let listA = listFromApi.filter { $0.idCategoria == categoryId };
-            
-        view.listCategoria = listA;
+        tableCell.listCategoria = [];
+        tableCell.listCategoria = listA;
+        tableCell.cvTipos.reloadData();
         
-        view.onCollectionItemSelect = { [weak self] (selectedIdCategoria, selectedCategoria, selectedTipo) in
+        tableCell.onCollectionItemSelect = { [weak self] (selectedIdCategoria, selectedCategoria, selectedTipo) in
             self?.selectedItem = (selectedIdCategoria, selectedCategoria, selectedTipo);
             self?.performSegue(withIdentifier: "mainPublicacionSegue", sender: self);
         }
         
-        return view;
+        return tableCell;
     }
     
     func dataForCells(_ list : [Categoria]){
@@ -92,14 +94,5 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.ids.append(id.idCategoria);
             self.nombre.append(id.nombre)
         }
-    }
-
-    func fillData(){
-        listFromApi.append(Categoria(id: 1, idCategoria: 1, nombre: "Categoria 1", tipo: "Tipo 1-1", imagen: "https://www.becas-santander.com/content/dam/becasmicrosites/blog/trabajos-del-futuro.jpg"));
-        listFromApi.append(Categoria(id: 2, idCategoria: 2, nombre: "Categoria 2", tipo: "Tipo 2-1", imagen: "https://www.becas-santander.com/content/dam/becasmicrosites/blog/trabajos-del-futuro.jpg"));
-        listFromApi.append(Categoria(id: 3, idCategoria: 2, nombre: "Categoria 2", tipo: "Tipo 2-2", imagen: "https://www.becas-santander.com/content/dam/becasmicrosites/blog/trabajos-del-futuro.jpg"));
-        listFromApi.append(Categoria(id: 4, idCategoria: 3, nombre: "Categoria 3", tipo: "Tipo 3-1", imagen: "https://www.becas-santander.com/content/dam/becasmicrosites/blog/trabajos-del-futuro.jpg"));
-        listFromApi.append(Categoria(id: 4, idCategoria: 3, nombre: "Categoria 3", tipo: "Tipo 3-2", imagen: "https://www.becas-santander.com/content/dam/becasmicrosites/blog/trabajos-del-futuro.jpg"));
-        listFromApi.append(Categoria(id: 4, idCategoria: 3, nombre: "Categoria 3", tipo: "Tipo 3-3", imagen: "https://www.becas-santander.com/content/dam/becasmicrosites/blog/trabajos-del-futuro.jpg"));
     }
 }
