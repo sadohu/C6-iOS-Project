@@ -13,6 +13,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var listCategoria : [Categoria] = [];
     var ids : [Int] = [];
     var nombre : [String] = [];
+    var selectedItem : (Int, String, String) = (-1, "", "");
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -34,7 +35,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     @IBAction func btnFind(_ sender: UIButton) {
-        performSegue(withIdentifier: "perfilView", sender: self);
+        // Filtrar
+    }
+    
+    @IBAction func btnNewPost(_ sender: UIButton) {
+        performSegue(withIdentifier: "mainPerfilSegue", sender: self);
+    }
+    
+    @IBAction func btnMenuAdmin(_ sender: UIButton) {
+        performSegue(withIdentifier: "mainAdminSegue", sender: self);
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mainPublicacionSegue" {
+            let view = segue.destination as! PublicViewController
+            view.cellType = selectedItem;
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -55,6 +71,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let listA = listFromApi.filter { $0.idCategoria == categoryId };
             
         view.listCategoria = listA;
+        
+        view.onCollectionItemSelect = { [weak self] (selectedIdCategoria, selectedCategoria, selectedTipo) in
+            self?.selectedItem = (selectedIdCategoria, selectedCategoria, selectedTipo);
+            self?.performSegue(withIdentifier: "mainPublicacionSegue", sender: self);
+        }
+        
         return view;
     }
     

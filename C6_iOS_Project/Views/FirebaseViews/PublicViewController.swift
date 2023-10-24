@@ -23,7 +23,7 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
         //-----Agregamos este para refres -----Agregamos este para reload
            let refreshControl = UIRefreshControl();
            //---------------
-    
+    var cellType = (-1, "", "");
     
     
     
@@ -41,6 +41,7 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
               refreshControl.addTarget(self, action: #selector(updateData), for: .valueChanged);
         tvPublicacion.refreshControl = refreshControl;
                //-------------------
+        print(cellType)
         
     }//fin de viewDidLoad
     //--------METODOS HEREDADOS INICIO
