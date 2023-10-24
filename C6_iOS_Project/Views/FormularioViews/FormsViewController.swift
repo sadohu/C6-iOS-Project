@@ -73,6 +73,7 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 print("Error al guardar datos")
             } else {
                 print("Datos guardados exitosamente")
+                self.performSegue(withIdentifier: "formPostsSegue", sender: self)
             }
         }
     }

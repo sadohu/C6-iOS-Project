@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
                     print("LOGIN CORRECTO")
                     //imprimimos el valor desde firebase el email y codigo de registro
                     print(data.user.uid)
+                    self.performSegue(withIdentifier: "loginMainSegue", sender: self);
                 }//fin de if
                 //si entra al else es que no tiene data
                 else{
