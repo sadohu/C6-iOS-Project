@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h41-Sm-o2q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Feb-BO-rRK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
@@ -7,7 +7,6 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -136,7 +135,7 @@
                         <outlet property="txtClave" destination="ePk-wf-DfJ" id="s1A-hQ-Tzx"/>
                         <outlet property="txtUsuario" destination="ezR-YD-JLa" id="e7D-qm-d5S"/>
                         <segue destination="l2P-Fg-UYb" kind="show" identifier="newUserView" id="z6R-tH-lSo"/>
-                        <segue destination="h41-Sm-o2q" kind="show" identifier="mainView" id="pXX-Ii-1tE"/>
+                        <segue destination="h41-Sm-o2q" kind="show" identifier="loginMainSegue" id="pXX-Ii-1tE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5FH-fC-XqY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -275,8 +274,8 @@
                     <connections>
                         <outlet property="tvCategorias" destination="hSy-w4-PEs" id="IQN-M0-M1g"/>
                         <segue destination="eAo-5W-hq5" kind="show" identifier="mainPerfilSegue" id="pEH-4V-XIa"/>
-                        <segue destination="LRP-xY-z0K" kind="show" identifier="mainAdminSegue" id="cFv-qS-nIk"/>
                         <segue destination="5FD-1S-typ" kind="show" identifier="mainPublicacionSegue" id="abl-mR-I0I"/>
+                        <segue destination="LRP-xY-z0K" kind="showDetail" identifier="mainAdminSegue" id="HJC-8O-NSh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciV-i8-Bmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -334,12 +333,11 @@
                     <navigationItem key="navigationItem" id="6xV-oZ-AIU"/>
                     <connections>
                         <segue destination="Pzj-YU-oD5" kind="show" identifier="formView" id="oqf-Ky-0iC"/>
-                        <segue destination="RGp-T1-PMh" kind="show" id="1rv-Zc-9ys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FlP-FA-wVg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3916.7938931297708" y="-106.33802816901409"/>
+            <point key="canvasLocation" x="3917" y="-881"/>
         </scene>
         <!--Forms View Controller-->
         <scene sceneID="Vye-xj-ET9">
@@ -445,12 +443,12 @@
                         <outlet property="txtDescrip" destination="zy0-2L-exg" id="xSi-HW-adg"/>
                         <outlet property="txtDescripcionTitulo" destination="aB9-CQ-Z5p" id="8zF-dU-qsm"/>
                         <outlet property="txtUbicacion" destination="zy0-2L-exg" id="To9-Uj-0L1"/>
-                        <segue destination="5FD-1S-typ" kind="show" identifier="listView" id="Wuq-yL-gbb"/>
+                        <segue destination="5FD-1S-typ" kind="show" identifier="formPostsSegue" id="Wuq-yL-gbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASz-JE-f0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4812.9770992366412" y="-487.32394366197184"/>
+            <point key="canvasLocation" x="4813" y="-882"/>
         </scene>
         <!--Public View Controller-->
         <scene sceneID="0LZ-yo-7aC">
@@ -529,7 +527,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zT-iJ-TyC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6151.9083969465646" y="-291.54929577464787"/>
+            <point key="canvasLocation" x="4813" y="-106"/>
         </scene>
         <!--Datos Publi View Controller-->
         <scene sceneID="64f-fP-tUR">
@@ -613,7 +611,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="od3-dl-lnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7023.6641221374039" y="-195.07042253521126"/>
+            <point key="canvasLocation" x="5778" y="-106"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SmT-Oq-Q6N">
@@ -653,7 +651,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stq-XC-gaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7788.5496183206105" y="-106.33802816901409"/>
+            <point key="canvasLocation" x="6708" y="-106"/>
         </scene>
         <!--New User View Controller-->
         <scene sceneID="1H9-a7-KuD">
@@ -766,7 +764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8f-3s-sAB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="718"/>
+            <point key="canvasLocation" x="2256" y="718"/>
         </scene>
         <!--Item-->
         <scene sceneID="jT4-m2-eH8">
@@ -787,106 +785,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdE-Rs-6CB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="673" y="-106"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ee0-Bh-BYl">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfn-Lu-JS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="RGp-T1-PMh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5SV-Kp-Z4P">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-UZ-F3l">
-                                <rect key="frame" x="16" y="161" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: Realizar peinado para boda" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ed-bX-THw">
-                                <rect key="frame" x="16" y="190" width="361" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ubicación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIn-JA-ZQE">
-                                <rect key="frame" x="16" y="238" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej: Independencia - Lima" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRF-Gt-N0K">
-                                <rect key="frame" x="16" y="267" width="361" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuS-TJ-Zy7">
-                                <rect key="frame" x="16" y="317" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4Bj-yp-0Ou">
-                                <rect key="frame" x="16" y="346" width="361" height="176"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categoría" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sL-Mw-hwN">
-                                <rect key="frame" x="16" y="538" width="74" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Kf-Hh-UzV">
-                                <rect key="frame" x="18" y="567" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="dxa-si-Gdc">
-                                    <children>
-                                        <command title="Item 1" id="976-XO-CTo"/>
-                                        <command title="Item 2" id="lfd-U9-8BE"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ta6-PP-EtX">
-                                <rect key="frame" x="56" y="708" width="280" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="mainPurple"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Publicar Servicio">
-                                    <backgroundConfiguration key="background" strokeWidth="2">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="strokeColor" name="mainPurple"/>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NECESITO UN EXPERTO PARA ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwA-Vu-Xvy">
-                                <rect key="frame" x="63" y="103" width="266" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="rDN-Yb-NYz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="akQ-aL-XqP"/>
-                    <connections>
-                        <segue destination="5FD-1S-typ" kind="show" id="c71-Db-HWH"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="5463" y="370"/>
         </scene>
         <!--Api View Controller-->
         <scene sceneID="6uu-mI-grm">
@@ -957,7 +855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98O-vB-tBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3366" y="718"/>
+            <point key="canvasLocation" x="3917" y="718"/>
         </scene>
         <!--Editar Cate View Controller-->
         <scene sceneID="QSp-hK-g3z">
@@ -1059,7 +957,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jll-Qz-MX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4253" y="1458"/>
+            <point key="canvasLocation" x="3917" y="1489"/>
         </scene>
         <!--Nue Cate View Controller-->
         <scene sceneID="Atu-e2-36x">
@@ -1133,7 +1031,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4i5-9w-v8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4253" y="733"/>
+            <point key="canvasLocation" x="4813" y="718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gqx-Gd-LE8">
@@ -1152,11 +1050,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yq8-z4-cDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2433" y="718"/>
+            <point key="canvasLocation" x="3056" y="718"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="abl-mR-I0I"/>
         <segue reference="Wuq-yL-gbb"/>
     </inferredMetricsTieBreakers>
     <resources>
