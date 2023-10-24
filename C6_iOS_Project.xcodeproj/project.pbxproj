@@ -76,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				27F83F072AE6FEAD0089F05F /* PublicViewController.swift */,
-				27F83F092AE702790089F05F /* Publicacion.swift */,
 				27F83F0B2AE7044F0089F05F /* PublicacionTableViewCell.swift */,
 				27F83F0D2AE710E60089F05F /* DatosPubliViewController.swift */,
 			);
@@ -97,6 +96,7 @@
 		41688A882AE5D4DB00760A57 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27F83F092AE702790089F05F /* Publicacion.swift */,
 				41688A892AE5D51D00760A57 /* Categoria.swift */,
 			);
 			path = Models;
