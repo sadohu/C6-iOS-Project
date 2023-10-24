@@ -7,15 +7,16 @@
 
 import UIKit
 
-class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource {
+class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var cvTipos: UICollectionView!
     var listCategoria : [Categoria] = [];
-    @IBOutlet weak var lblCategoria: UILabel!
+    var onCollectionItemSelect: ((Int, String, String) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib();
         cvTipos.dataSource = self;
+        cvTipos.delegate = self;
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -44,9 +45,15 @@ class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource {
         return item;
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedItemIdCategoria = listCategoria[indexPath.row].idCategoria;
+        let selectedItemCategoria = listCategoria[indexPath.row].nombre;
+        let selectedItemTipo = listCategoria[indexPath.row].tipo;
+        onCollectionItemSelect?(selectedItemIdCategoria, selectedItemCategoria, selectedItemTipo);
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
     }
     
     func resizeImage(_ image : UIImage) -> UIImage{
