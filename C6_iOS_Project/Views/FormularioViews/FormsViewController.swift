@@ -15,12 +15,17 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var txtDescripcionTitulo: UITextField!
     @IBOutlet weak var txtUbicacion: UITextField!
+    
+    
+    @IBOutlet weak var txtTipoCateg: UITextField!
+    
     @IBOutlet weak var txtDescrip: UITextField!
     @IBOutlet weak var txtDecripGeneral: UITextField!
     @IBOutlet weak var cboCategoria: UIPickerView!
     var titulo: String = ""
     var estado: Int = -1
     let categorias = ["Categoria 1", "Categoria 2", "Categoria 3"]
+    //let categorias = [1, 2, 3]
     //Arreglo de estructura de Publicacion,arreglo de tipo Publicacion en vacio - > []
     var listaPublic:[Publicacion]=[]
     //Crear objeto de acceso a la base de datos
@@ -47,25 +52,34 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return categorias[row]
     }
+    
+    
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        _ = categorias[row]
+       // _ = categorias[row]
+        let selectedCategoryRow = row + 1
         // Puedes guardar la selección en una propiedad de la clase o hacer algo con ella.
     }
     @IBAction func btnPublicar(_ sender: UIButton) {
         let descripcionTitulo = txtDescripcionTitulo.text
-        let ubicacion = txtUbicacion.text
+        let nombrepublicaper = txtUbicacion.text
         let descripcion = txtDescrip.text
-        let descripGeneral = txtDecripGeneral.text
-        
+        let descripPer = txtDecripGeneral.text
+        let tipoCat = txtTipoCateg.text
         let selectedCategoryRow = cboCategoria.selectedRow(inComponent: 0)
-        let selectedCategory = categorias[selectedCategoryRow]
+        //let selectedCategory = categorias[selectedCategoryRow]
+        //para clave - valor , se muestra categoria1 se guarda 1
+        let selectedCategory = selectedCategoryRow + 1
         // Crea un diccionario con los datos que deseas enviar a Firebase
         let data: [String: Any] = [
             "titulopubli": descripcionTitulo ?? "",
-            "nombrepublicaper": ubicacion ?? "",
-            "descrippublicaper": descripcion ?? "",
-            "descrippubli": descripGeneral ?? "",
-            "comentinteres": selectedCategory
+            "nombrepublicaper": nombrepublicaper ?? "",
+            "descrippublicaper": descripPer ?? "",
+            "descrippubli": descripcion ?? "",
+            "tipo": tipoCat ?? "",
+            "comentinteres" : "",
+            "idCategoria": selectedCategory
+            //"comentinteres": selectedCategory
         ]
         
         db.collection("publicacion").addDocument(data: data) { error in

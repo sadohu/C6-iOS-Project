@@ -148,9 +148,12 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
                     let nombreper = row["nombrepublicaper"] as? String ?? ""
                     let descripper = row["descrippublicaper"] as? String ?? ""
                     let coment = row["comentinteres"] as? String ?? ""
-                    
+                    //-----TIPO Y CATEGORIA ID
+                    let catid = row["idCategoria"] as? Int ?? 0
+                    let tipo = row["tipo"] as? String ?? ""
+                    //
                                 
-                                return Publicacion(uid: pkuid, titulopubli: titu, descrippubli: despubli, nombrepublicaper: nombreper, descrippublicaper: descripper, comentinteres: coment)
+                return Publicacion(uid: pkuid, idCategoria: catid, tipo: tipo, titulopubli: titu, descrippubli: despubli, nombrepublicaper: nombreper, descrippublicaper: descripper, comentinteres: coment)
                 }//fin de map
                      
                 //actualizar tabla o refrescar la tabla
