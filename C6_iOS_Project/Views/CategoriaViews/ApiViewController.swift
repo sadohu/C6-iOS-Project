@@ -40,7 +40,7 @@ class ApiViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     //creamos funcion para listar todos los medicamentos del API
         func cargarCategorias(){
             //almacenamos la URL de la API en una variable URLAPI
-            let URLAPI="https://9e44-45-5-69-231.ngrok-free.app/categoria/listar"
+            let URLAPI="https://9b87-45-5-69-231.ngrok-free.app/categoria/listar"
             //convertimos a URL la variable URLAPI
             let url=URL(string: URLAPI)
             //Con URLSession le pasamos el url de arriba ya convertido en el with
@@ -65,7 +65,7 @@ class ApiViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
                         //con la variable medicamentos que tiene la data de la URL
                         self.listaCategorias = categoria
                         //imprimimos
-                        print(categoria)
+//                        print(categoria)
                         //refrescar la tabla debe ser asincrona en segundo plano por hilo
                         DispatchQueue.main.async {
                             self.myTableView.reloadData()
