@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B09B5A2AE826EA001A9CC1 /* ComentarioModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B582AE826EA001A9CC1 /* ComentarioModel.xcdatamodeld */; };
+		27B09B5D2AE829BE001A9CC1 /* ControladorComentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B5C2AE829BE001A9CC1 /* ControladorComentario.swift */; };
+		27B09B5F2AE82AEA001A9CC1 /* Comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B5E2AE82AEA001A9CC1 /* Comentario.swift */; };
+		27B09B612AE82F51001A9CC1 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B602AE82F51001A9CC1 /* ItemTableViewCell.swift */; };
+		27B09B632AE83068001A9CC1 /* ComentarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B622AE83068001A9CC1 /* ComentarioViewController.swift */; };
+		27B09B652AE8354A001A9CC1 /* DatosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B642AE8354A001A9CC1 /* DatosViewController.swift */; };
+		27B09B672AE83883001A9CC1 /* NuevoComentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B09B662AE83883001A9CC1 /* NuevoComentViewController.swift */; };
 		27F83F082AE6FEAD0089F05F /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F072AE6FEAD0089F05F /* PublicViewController.swift */; };
 		27F83F0A2AE702790089F05F /* Publicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F092AE702790089F05F /* Publicacion.swift */; };
 		27F83F0C2AE7044F0089F05F /* PublicacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F0B2AE7044F0089F05F /* PublicacionTableViewCell.swift */; };
@@ -35,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27B09B592AE826EA001A9CC1 /* ComentarioModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ComentarioModel.xcdatamodel; sourceTree = "<group>"; };
+		27B09B5C2AE829BE001A9CC1 /* ControladorComentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControladorComentario.swift; sourceTree = "<group>"; };
+		27B09B5E2AE82AEA001A9CC1 /* Comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comentario.swift; sourceTree = "<group>"; };
+		27B09B602AE82F51001A9CC1 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		27B09B622AE83068001A9CC1 /* ComentarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentarioViewController.swift; sourceTree = "<group>"; };
+		27B09B642AE8354A001A9CC1 /* DatosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosViewController.swift; sourceTree = "<group>"; };
+		27B09B662AE83883001A9CC1 /* NuevoComentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuevoComentViewController.swift; sourceTree = "<group>"; };
 		27F83F072AE6FEAD0089F05F /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
 		27F83F092AE702790089F05F /* Publicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publicacion.swift; sourceTree = "<group>"; };
 		27F83F0B2AE7044F0089F05F /* PublicacionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicacionTableViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27B09B5B2AE82985001A9CC1 /* ComentarioViewsCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				27B09B5C2AE829BE001A9CC1 /* ControladorComentario.swift */,
+				27B09B602AE82F51001A9CC1 /* ItemTableViewCell.swift */,
+				27B09B622AE83068001A9CC1 /* ComentarioViewController.swift */,
+				27B09B642AE8354A001A9CC1 /* DatosViewController.swift */,
+				27B09B662AE83883001A9CC1 /* NuevoComentViewController.swift */,
+			);
+			path = ComentarioViewsCoreData;
+			sourceTree = "<group>";
+		};
 		27F83F062AE6F03E0089F05F /* FirebaseViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +130,8 @@
 			children = (
 				27F83F092AE702790089F05F /* Publicacion.swift */,
 				41688A892AE5D51D00760A57 /* Categoria.swift */,
+				27B09B582AE826EA001A9CC1 /* ComentarioModel.xcdatamodeld */,
+				27B09B5E2AE82AEA001A9CC1 /* Comentario.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,6 +185,7 @@
 		41B92C4B2ACE996500FB17C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				27B09B5B2AE82985001A9CC1 /* ComentarioViewsCoreData */,
 				F79EADB22AE5E5A00031EE9D /* FormularioViews */,
 				27F83F062AE6F03E0089F05F /* FirebaseViews */,
 				41688A8E2AE5E8D300760A57 /* MainView */,
@@ -318,18 +347,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B92C4D2ACE998200FB17C8 /* LoginViewController.swift in Sources */,
+				27B09B5A2AE826EA001A9CC1 /* ComentarioModel.xcdatamodeld in Sources */,
+				27B09B5F2AE82AEA001A9CC1 /* Comentario.swift in Sources */,
 				41688A902AE5E91800760A57 /* MainItemTableViewCell.swift in Sources */,
+				27B09B612AE82F51001A9CC1 /* ItemTableViewCell.swift in Sources */,
 				41B92C3C2ACE704100FB17C8 /* ViewController.swift in Sources */,
 				41688A852AE5D4AD00760A57 /* NueCateViewController.swift in Sources */,
+				27B09B632AE83068001A9CC1 /* ComentarioViewController.swift in Sources */,
 				27F83F082AE6FEAD0089F05F /* PublicViewController.swift in Sources */,
 				41A81AF82ACFB2450056A2C5 /* CustomConfig.swift in Sources */,
 				27F83F0C2AE7044F0089F05F /* PublicacionTableViewCell.swift in Sources */,
+				27B09B5D2AE829BE001A9CC1 /* ControladorComentario.swift in Sources */,
+				27B09B652AE8354A001A9CC1 /* DatosViewController.swift in Sources */,
 				41688A8C2AE5D90300760A57 /* MTableViewCell.swift in Sources */,
 				27F83F0A2AE702790089F05F /* Publicacion.swift in Sources */,
 				41688A832AE5D49B00760A57 /* EditarCateViewController.swift in Sources */,
 				41688A962AE5EEC200760A57 /* MainViewController.swift in Sources */,
 				41A81AF42ACFAE8E0056A2C5 /* NewUserViewController.swift in Sources */,
 				27F83F0E2AE710E70089F05F /* DatosPubliViewController.swift in Sources */,
+				27B09B672AE83883001A9CC1 /* NuevoComentViewController.swift in Sources */,
 				41B92C382ACE704100FB17C8 /* AppDelegate.swift in Sources */,
 				41688A942AE5EACD00760A57 /* MainTableCollectionViewCell.swift in Sources */,
 				41688A872AE5D4BC00760A57 /* ApiViewController.swift in Sources */,
@@ -554,6 +590,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		27B09B582AE826EA001A9CC1 /* ComentarioModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				27B09B592AE826EA001A9CC1 /* ComentarioModel.xcdatamodel */,
+			);
+			currentVersion = 27B09B592AE826EA001A9CC1 /* ComentarioModel.xcdatamodel */;
+			path = ComentarioModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 41B92C2C2ACE704100FB17C8 /* Project object */;
 }
