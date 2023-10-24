@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27F83F082AE6FEAD0089F05F /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F072AE6FEAD0089F05F /* PublicViewController.swift */; };
+		27F83F0A2AE702790089F05F /* Publicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F092AE702790089F05F /* Publicacion.swift */; };
+		27F83F0C2AE7044F0089F05F /* PublicacionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F0B2AE7044F0089F05F /* PublicacionTableViewCell.swift */; };
+		27F83F0E2AE710E70089F05F /* DatosPubliViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F83F0D2AE710E60089F05F /* DatosPubliViewController.swift */; };
 		411E591A2AE49D350011362B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 411E59192AE49D350011362B /* GoogleService-Info.plist */; };
 		41688A832AE5D49B00760A57 /* EditarCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A822AE5D49B00760A57 /* EditarCateViewController.swift */; };
 		41688A852AE5D4AD00760A57 /* NueCateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41688A842AE5D4AC00760A57 /* NueCateViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27F83F072AE6FEAD0089F05F /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
+		27F83F092AE702790089F05F /* Publicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publicacion.swift; sourceTree = "<group>"; };
+		27F83F0B2AE7044F0089F05F /* PublicacionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicacionTableViewCell.swift; sourceTree = "<group>"; };
+		27F83F0D2AE710E60089F05F /* DatosPubliViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatosPubliViewController.swift; sourceTree = "<group>"; };
 		411E59192AE49D350011362B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		41688A822AE5D49B00760A57 /* EditarCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarCateViewController.swift; sourceTree = "<group>"; };
 		41688A842AE5D4AC00760A57 /* NueCateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NueCateViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27F83F062AE6F03E0089F05F /* FirebaseViews */ = {
+			isa = PBXGroup;
+			children = (
+				27F83F072AE6FEAD0089F05F /* PublicViewController.swift */,
+				27F83F092AE702790089F05F /* Publicacion.swift */,
+				27F83F0B2AE7044F0089F05F /* PublicacionTableViewCell.swift */,
+				27F83F0D2AE710E60089F05F /* DatosPubliViewController.swift */,
+			);
+			path = FirebaseViews;
+			sourceTree = "<group>";
+		};
 		41688A812AE5D44C00760A57 /* CategoriaViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +137,7 @@
 		41B92C4B2ACE996500FB17C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				27F83F062AE6F03E0089F05F /* FirebaseViews */,
 				41688A812AE5D44C00760A57 /* CategoriaViews */,
 				41B92C4C2ACE998200FB17C8 /* LoginViewController.swift */,
 				41A81AF32ACFAE8E0056A2C5 /* NewUserViewController.swift */,
@@ -269,10 +289,14 @@
 				41B92C4D2ACE998200FB17C8 /* LoginViewController.swift in Sources */,
 				41B92C3C2ACE704100FB17C8 /* ViewController.swift in Sources */,
 				41688A852AE5D4AD00760A57 /* NueCateViewController.swift in Sources */,
+				27F83F082AE6FEAD0089F05F /* PublicViewController.swift in Sources */,
 				41A81AF82ACFB2450056A2C5 /* CustomConfig.swift in Sources */,
+				27F83F0C2AE7044F0089F05F /* PublicacionTableViewCell.swift in Sources */,
 				41688A8C2AE5D90300760A57 /* MTableViewCell.swift in Sources */,
+				27F83F0A2AE702790089F05F /* Publicacion.swift in Sources */,
 				41688A832AE5D49B00760A57 /* EditarCateViewController.swift in Sources */,
 				41A81AF42ACFAE8E0056A2C5 /* NewUserViewController.swift in Sources */,
+				27F83F0E2AE710E70089F05F /* DatosPubliViewController.swift in Sources */,
 				41B92C382ACE704100FB17C8 /* AppDelegate.swift in Sources */,
 				41688A872AE5D4BC00760A57 /* ApiViewController.swift in Sources */,
 				41B92C3A2ACE704100FB17C8 /* SceneDelegate.swift in Sources */,
