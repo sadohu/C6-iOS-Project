@@ -20,4 +20,17 @@ class CustomConfig {
        viewController.navigationItem.setHidesBackButton(false, animated: false);
        viewController.navigationController?.navigationBar.isHidden = false;
    }
+    
+   static func getCategoriasSection(_ list : [Categoria]) -> [Categoria]{
+       var categoriasFiltradas: [Int : Categoria] = [:];
+
+       for categoria in list {
+           if categoriasFiltradas[categoria.idCategoria] == nil {
+               categoriasFiltradas[categoria.idCategoria] = categoria
+           }
+       }
+
+       let categoriasUnicas = Array(categoriasFiltradas.values);
+       return categoriasUnicas.sorted { $0.idCategoria < $1.idCategoria };
+   }
 }

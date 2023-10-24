@@ -9,6 +9,7 @@ import UIKit
 
 struct Categoria : Codable{
     var id : Int
+    var idCategoria : Int
     var nombre: String
     var tipo : String
     var imagen : String

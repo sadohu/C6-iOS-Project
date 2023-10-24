@@ -47,7 +47,7 @@ class EditarCateViewController: UIViewController {
                imagen=txtImagen.text ?? ""
               
                //variable de tipo Medicamento struct
-               let cat = Categoria(id: cod, nombre: nom, tipo: tipo, imagen: imagen)
+               let cat = Categoria(id: cod, idCategoria: 1, nombre: nom, tipo: tipo, imagen: imagen)
                //llamamos a grabarMedicamento de abajo y le pasamos med
                modificarCategoria(bean: cat)
                print("Categoria Actualizada")

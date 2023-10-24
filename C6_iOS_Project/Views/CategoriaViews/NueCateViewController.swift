@@ -30,7 +30,7 @@ class NueCateViewController: UIViewController {
                 tipo=txtTipo.text ?? ""
                 img=txtImagen.text ?? ""
                 //variable de tipo Medicamento struct
-                var cat = Categoria(id: 0, nombre: nom, tipo: tipo, imagen: img)
+                var cat = Categoria(id: 0, idCategoria: 1, nombre: nom, tipo: tipo, imagen: img)
         //llamamos al metodo
         grabarCategoria(bean: cat)
     }//fin de btnGuardar
