@@ -10,6 +10,10 @@ import UIKit
 struct Publicacion {
     //agregamos atributo uid para la PK de cada registro
     var uid:String
+    //-------Campos for Hugo
+    var idCategoria:Int
+    var tipo:String
+    //----------------
     var titulopubli:String
     var descrippubli:String
     var nombrepublicaper:String

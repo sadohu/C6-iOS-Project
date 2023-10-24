@@ -46,7 +46,9 @@ class DatosPubliViewController: UIViewController {
                 "comentinteres":comentario,
                 "nombrepublicaper":data.nombrepublicaper,
                 "descrippublicaper":data.descrippublicaper,
-                "descrippubli":data.descrippubli
+                "descrippubli":data.descrippubli,
+                "idCategoria":data.idCategoria,
+                "tipo":data.tipo
                ]){ error in
                    //validamos con la variable error de arriba , por si sale error
                    //si ex= error es true osea hay error
