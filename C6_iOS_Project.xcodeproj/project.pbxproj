@@ -27,6 +27,8 @@
 		41B92C442ACE704300FB17C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B92C422ACE704300FB17C8 /* LaunchScreen.storyboard */; };
 		41B92C4D2ACE998200FB17C8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B92C4C2ACE998200FB17C8 /* LoginViewController.swift */; };
 		87CDA3F6E4EC7C7FB5E07A98 /* Pods_C6_iOS_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376F3B73FE0B13C6FFDC3C4 /* Pods_C6_iOS_Project.framework */; };
+		F79EADB62AE5EC030031EE9D /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EADB52AE5EC030031EE9D /* OptionsViewController.swift */; };
+		F79EADB82AE5F1980031EE9D /* FormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79EADB72AE5F1980031EE9D /* FormsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		6376F3B73FE0B13C6FFDC3C4 /* Pods_C6_iOS_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_C6_iOS_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B76125B559EE75BD896AB810 /* Pods-C6_iOS_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C6_iOS_Project.release.xcconfig"; path = "Target Support Files/Pods-C6_iOS_Project/Pods-C6_iOS_Project.release.xcconfig"; sourceTree = "<group>"; };
 		EF867940A1D25A05725B02B9 /* Pods-C6_iOS_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C6_iOS_Project.debug.xcconfig"; path = "Target Support Files/Pods-C6_iOS_Project/Pods-C6_iOS_Project.debug.xcconfig"; sourceTree = "<group>"; };
+		F79EADB52AE5EC030031EE9D /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		F79EADB72AE5F1980031EE9D /* FormsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		41B92C4B2ACE996500FB17C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F79EADB22AE5E5A00031EE9D /* FormularioViews */,
 				27F83F062AE6F03E0089F05F /* FirebaseViews */,
 				41688A812AE5D44C00760A57 /* CategoriaViews */,
 				41B92C4C2ACE998200FB17C8 /* LoginViewController.swift */,
@@ -168,6 +173,15 @@
 				B76125B559EE75BD896AB810 /* Pods-C6_iOS_Project.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F79EADB22AE5E5A00031EE9D /* FormularioViews */ = {
+			isa = PBXGroup;
+			children = (
+				F79EADB52AE5EC030031EE9D /* OptionsViewController.swift */,
+				F79EADB72AE5F1980031EE9D /* FormsViewController.swift */,
+			);
+			path = FormularioViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +313,10 @@
 				27F83F0E2AE710E70089F05F /* DatosPubliViewController.swift in Sources */,
 				41B92C382ACE704100FB17C8 /* AppDelegate.swift in Sources */,
 				41688A872AE5D4BC00760A57 /* ApiViewController.swift in Sources */,
+				F79EADB62AE5EC030031EE9D /* OptionsViewController.swift in Sources */,
 				41B92C3A2ACE704100FB17C8 /* SceneDelegate.swift in Sources */,
 				41688A8A2AE5D51D00760A57 /* Categoria.swift in Sources */,
+				F79EADB82AE5F1980031EE9D /* FormsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
