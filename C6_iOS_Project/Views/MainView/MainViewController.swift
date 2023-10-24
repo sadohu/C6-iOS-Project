@@ -23,6 +23,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         dataForCells(listCategoria);
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    @IBAction func btnFind(_ sender: UIButton) {
+        performSegue(withIdentifier: "perfilView", sender: self);
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return ids.count;
     }
