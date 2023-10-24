@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataLoadedDelegate {
     @IBOutlet weak var tvCategorias: UITableView!
     var listFromApi : [Categoria] = [];
     var listCategoria : [Categoria] = [];
@@ -19,9 +19,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad();
         tvCategorias.dataSource = self;
         tvCategorias.rowHeight = 200;
-        fillData();
+//        fillData();
+        CustomConfig.getCategoriasFromApi(delegate: self);
+        
+    }
+    
+    func dataLoadedSuccessfully(data: [Categoria]) {
+        listFromApi = data;
         listCategoria = CustomConfig.getCategoriasSection(listFromApi);
         dataForCells(listCategoria);
+        tvCategorias.reloadData();
     }
     
     override func viewWillAppear(_ animated: Bool) {

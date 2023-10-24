@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Feb-BO-rRK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h41-Sm-o2q">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
@@ -275,7 +275,7 @@
                         <outlet property="tvCategorias" destination="hSy-w4-PEs" id="IQN-M0-M1g"/>
                         <segue destination="eAo-5W-hq5" kind="show" identifier="mainPerfilSegue" id="pEH-4V-XIa"/>
                         <segue destination="5FD-1S-typ" kind="show" identifier="mainPublicacionSegue" id="abl-mR-I0I"/>
-                        <segue destination="LRP-xY-z0K" kind="showDetail" identifier="mainAdminSegue" id="HJC-8O-NSh"/>
+                        <segue destination="cxB-c2-lPv" kind="show" identifier="mainAdminSegue" id="0Nk-7d-W60"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciV-i8-Bmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1033,28 +1033,9 @@
             </objects>
             <point key="canvasLocation" x="4813" y="718"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Gqx-Gd-LE8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LRP-xY-z0K" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="NVF-Tq-HLF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmh-kG-3Sa">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cxB-c2-lPv" kind="relationship" relationship="rootViewController" id="Q1z-Yt-jQ1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yq8-z4-cDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3056" y="718"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wuq-yL-gbb"/>
+        <segue reference="abl-mR-I0I"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
