@@ -24,7 +24,8 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
            let refreshControl = UIRefreshControl();
            //---------------
     var cellType = (-1, "", "");
-    
+    var textToFind = "";
+    var typeFilterButton : Bool = true;
     
     
     override func viewDidLoad() {
@@ -41,7 +42,6 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
               refreshControl.addTarget(self, action: #selector(updateData), for: .valueChanged);
         tvPublicacion.refreshControl = refreshControl;
                //-------------------
-        print(cellType)
         
     }//fin de viewDidLoad
     //--------METODOS HEREDADOS INICIO
@@ -157,12 +157,33 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 }//fin de map
                      
                 //actualizar tabla o refrescar la tabla
-                self.tvPublicacion.reloadData()
+                self.filterPublicacion();
             }//fin de data,error
         }//fin de listadoPublic
    
     
-
+    func filterPublicacion(){
+        var filterList : [Publicacion] = [];
+        if(typeFilterButton){
+            filterList = listaPublic.filter {(
+                $0.titulopubli.range(of: self.textToFind, options: .caseInsensitive) != nil ||
+                $0.nombrepublicaper.range(of: self.textToFind, options: .caseInsensitive) != nil ||
+                $0.descrippublicaper.range(of: self.textToFind, options: .caseInsensitive) != nil ||
+                $0.descrippubli.range(of: self.textToFind, options: .caseInsensitive) != nil ||
+                $0.tipo.range(of: self.textToFind, options: .caseInsensitive) != nil
+            )}
+            listaPublic = [];
+            listaPublic = filterList;
+        }else{
+            filterList = listaPublic.filter {(
+                $0.idCategoria ==  cellType.0 && // idCategoria
+                $0.tipo == cellType.2 // Tipo
+            )}
+            listaPublic = [];
+            listaPublic = filterList;
+        }
+        self.tvPublicacion.reloadData()
+    }
     
     //-----------------------------     //-----Agregamos este para reload
          @objc func updateData() {

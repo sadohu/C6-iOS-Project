@@ -29,6 +29,7 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     // Variables de captura del formulario (cbo)
     var idCategoria : Int = 0;
     var nombre = "", tipo = "";
+    var typeFilterButton : Bool = false;
     
     //let categorias = [1, 2, 3]
     //Arreglo de estructura de Publicacion,arreglo de tipo Publicacion en vacio - > []
@@ -136,6 +137,7 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         if segue.identifier == "formPostsSegue" {
             let view = segue.destination as! PublicViewController;
             view.cellType = (self.idCategoria, self.nombre, self.tipo);
+            view.typeFilterButton = typeFilterButton;
         }
     }
 }

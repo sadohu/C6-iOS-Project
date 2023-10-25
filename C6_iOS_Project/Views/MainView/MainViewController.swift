@@ -10,12 +10,15 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataLoadedDelegate {
     @IBOutlet weak var tvCategorias: UITableView!
     @IBOutlet weak var btnMenuAdmin: UIButton!
+    @IBOutlet weak var txtFind: UITextField!
     var listFromApi : [Categoria] = [];
     var listCategoria : [Categoria] = [];
     var ids : [Int] = [];
     var nombre : [String] = [];
     var selectedItem : (Int, String, String) = (-1, "", "");
     var clientMode : Bool = true;
+    var textToFind : String = "";
+    var typeFilterButton : Bool = true;
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -46,7 +49,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     @IBAction func btnFind(_ sender: UIButton) {
-        // Filtrar
+        textToFind = txtFind.text ?? "";
+        let validNull = textToFind.count;
+        if(validNull <= 0){
+            print("Eres bajo y moriras bajo!")
+            return;
+        }
+        typeFilterButton = true;
+        performSegue(withIdentifier: "mainPublicacionSegue", sender: self);
     }
     
     @IBAction func btnNewPost(_ sender: UIButton) {
@@ -61,6 +71,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if segue.identifier == "mainPublicacionSegue" {
             let view = segue.destination as! PublicViewController
             view.cellType = selectedItem;
+            view.textToFind = textToFind;
+            view.typeFilterButton = typeFilterButton;
         }
     }
     
@@ -86,6 +98,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableCell.onCollectionItemSelect = { [weak self] (selectedIdCategoria, selectedCategoria, selectedTipo) in
             self?.selectedItem = (selectedIdCategoria, selectedCategoria, selectedTipo);
+            self?.typeFilterButton = false;
             self?.performSegue(withIdentifier: "mainPublicacionSegue", sender: self);
         }
         
