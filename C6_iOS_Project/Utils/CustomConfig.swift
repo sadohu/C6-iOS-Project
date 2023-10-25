@@ -54,8 +54,24 @@ class CustomConfig {
                 print(error.localizedDescription);
             }
         }
-        
         // Inicar tarea
         task.resume();
+    }
+    
+    static func loadImage(fromURL imgURL : String, into imageView: UIImageView){
+        if let url = URL(string: imgURL) {
+            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Error al cargar la imagen: \(error)")
+                } else if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        imageView.image = image;
+                    }
+                }
+            }
+            task.resume()
+        } else {
+            print("Error en tu url manito")
+        }
     }
 }

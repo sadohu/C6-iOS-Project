@@ -27,7 +27,7 @@ class ApiViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         myTableView.dataSource=self
                //esto con la intencion de que se haga click para accion debemos poner delegate
         myTableView.delegate=self               //Agregando altura o tamaño a la celda
-        myTableView.rowHeight=150
+        myTableView.rowHeight=120
 
     }//fin de viewDidLoad
     
@@ -96,13 +96,15 @@ class ApiViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: "cellAPI") as! MTableViewCell
-        cell.myLabel.text="Tipo : "+listaCategorias[indexPath.row].tipo
+        cell.lblCategoria.text = listaCategorias[indexPath.row].nombre;
+        cell.lblTipo.text = listaCategorias[indexPath.row].tipo;
         let img = listaCategorias[indexPath.row].imagen
         //--------------------------------- Para imprimir en myImage
-        let url = URL(string: img)
-        let data = try? Data(contentsOf: url!)
-        cell.myImage.image = UIImage(data: data!)
-        
+//        let url = URL(string: img)
+//        let data = try? Data(contentsOf: url!)
+//        cell.myImage.image = UIImage(data: data!)
+        // Mejorar el performance de la carga de imagenes a traves de un metodo asincrono
+        CustomConfig.loadImage(fromURL: img, into: cell.myImage);
        //retorna
         return cell
     }//fin de tableView
