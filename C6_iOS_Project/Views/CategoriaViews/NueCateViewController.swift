@@ -24,13 +24,13 @@ class NueCateViewController: UIViewController {
 
     @IBAction func btnGuardar(_ sender: UIButton) {
         //leermos lo de las cajas para eso creamos variables para coger la data de las cajas
-                var nom,tipo,img:String
-                //asociamos las cajas con las variables
-                nom=txtNombre.text ?? ""
-                tipo=txtTipo.text ?? ""
-                img=txtImagen.text ?? ""
-                //variable de tipo Medicamento struct
-                var cat = Categoria(id: 0, idCategoria: 1, nombre: nom, tipo: tipo, imagen: img)
+        var nom,tipo,img:String
+        //asociamos las cajas con las variables
+        nom=txtNombre.text ?? ""
+        tipo=txtTipo.text ?? ""
+        img=txtImagen.text ?? ""
+        //variable de tipo Medicamento struct
+        let cat = Categoria(id: 0, idCategoria: 1, nombre: nom, tipo: tipo, imagen: img)
         //llamamos al metodo
         grabarCategoria(bean: cat)
     }//fin de btnGuardar
@@ -42,7 +42,7 @@ class NueCateViewController: UIViewController {
                 //convertir a JSON el valor del parametro bean PARA SERIALIZAR JSON ENCODER
                 let jsonData = try JSONEncoder().encode(bean)
                 //almacenamos la URL de la API en una variable URLAPI
-                let URLAPI="https://9b87-45-5-69-231.ngrok-free.app/categoria/registrar"
+                let URLAPI = CustomConfig.URL_API + "/categoria/registrar"
                 //convertimos a URL la variable URLAPI
                 let urlRegistrar=URL(string: URLAPI)
                 //creamos variable request que almacena un URLRequest y le pasamos en parametro
