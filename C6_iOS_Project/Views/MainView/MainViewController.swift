@@ -19,6 +19,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var clientMode : Bool = true;
     var textToFind : String = "";
     var typeFilterButton : Bool = true;
+    //
+    var uidFromLogin1 :String!
+    var uidFromLogin2 :String = ""
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -73,6 +77,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             view.cellType = selectedItem;
             view.textToFind = textToFind;
             view.typeFilterButton = typeFilterButton;
+            view.uidFromLogin2 = self.uidFromLogin1
         }
     }
     

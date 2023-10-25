@@ -18,6 +18,10 @@ class DatosPubliViewController: UIViewController {
     //creamos atributo data de tipo Publicacion que es struct
     //obteniendo lo de PublicViewController es decir los datos cuando le de click
        var data:Publicacion!
+    //para obtener del prepare
+    var uidFromLogin3:String!
+    var uidFromLogin4:String = ""
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         //Configurar ttextview
@@ -98,7 +102,21 @@ class DatosPubliViewController: UIViewController {
                }
            } //fin de error in
     //-----------------------------
+    
     */
+    @IBAction func btnComentar(_ sender: UIButton) {
+        performSegue(withIdentifier: "commentsView", sender: self)
+        print(uidFromLogin3!)
+        
+    }//fin de btnComentar
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "commentsView" {
+            let destino = segue.destination as! ComentarioViewController
+            destino.uidFromLogin4 = self.uidFromLogin3
+        }
+    }
       //creamos funcion para mensaje
       func ventanaMensaje(men:String){
           //ALERTA

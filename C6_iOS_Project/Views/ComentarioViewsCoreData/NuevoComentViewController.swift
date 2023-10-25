@@ -8,7 +8,8 @@
 import UIKit
 
 class NuevoComentViewController: UIViewController {
-
+    //Obtengo uid
+    var u:String!
     
     //Outlet
     @IBOutlet weak var txtComentario: UITextView!
@@ -28,7 +29,7 @@ class NuevoComentViewController: UIViewController {
         //Declaramos variable para poder almacena lo de las cajas
         var com,coduid:String
         //Leer de las cajas
-        coduid="XYZ1"
+        coduid=self.u
         com=txtComentario.text ?? ""
         //crear variable de la structura Comentario
         let data = Comentario(uid: coduid, comenta: com)
