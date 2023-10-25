@@ -9,26 +9,21 @@ import UIKit
 
 class EditarCateViewController: UIViewController {
     
-    
-    
-    @IBOutlet weak var txtCodigo: UITextField!
-    
-    
     @IBOutlet weak var txtNombre: UITextField!
-    
-    
     @IBOutlet weak var txtTipo: UITextField!
-    
     @IBOutlet weak var txtImagen: UITextView!
     
+    var objId = 0, idCategoria = 0;
     //creamos atributo medi Ae tipo MediAamento que As struct
         var categ:Categoria!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        objId = categ.id;
+        idCategoria = categ.idCategoria;
+        
         //Obtenemos de medi los Aampos y mostramos en las cajas txt
-               txtCodigo.text=String(categ.id)
                txtNombre.text=categ.nombre
                txtTipo.text=categ.tipo
                txtImagen.text=categ.imagen
@@ -38,16 +33,14 @@ class EditarCateViewController: UIViewController {
 
     @IBAction func btnModificar(_ sender: UIButton) {
         //leermos lo de las cajas para eso creamos variables para coger la data de las cajas
-                var cod:Int
                var nom,tipo,imagen:String
                //asociamos las cajas con las variables
-               cod = Int(txtCodigo.text ?? "0") ?? 0
                nom=txtNombre.text ?? ""
                tipo=txtTipo.text ?? ""
                imagen=txtImagen.text ?? ""
               
                //variable de tipo Medicamento struct
-               let cat = Categoria(id: cod, idCategoria: 1, nombre: nom, tipo: tipo, imagen: imagen)
+        let cat = Categoria(id: self.objId, idCategoria: self.idCategoria, nombre: nom, tipo: tipo, imagen: imagen);
                //llamamos a grabarMedicamento de abajo y le pasamos med
                modificarCategoria(bean: cat)
                print("Categoria Actualizada")
@@ -62,12 +55,9 @@ class EditarCateViewController: UIViewController {
             //Crear ventana de alerta
             let ventana=UIAlertController(title: "SISTEMA", message: "Seguro de eliminar?", preferredStyle: .alert)
             //crear botonAceptar pasandole el bean de arriba por medio de self
-            let botonAceptar=UIAlertAction(title: "Aceptar", style: .default,handler:{ action in //leermos lo de las cajas para eso creamos variables para coger la data de las cajas
-                let cod:Int
-                //asociamos las cajas con las variables
-                cod = Int(self.txtCodigo.text ?? "0") ?? 0
+            let botonAceptar=UIAlertAction(title: "Aceptar", style: .default,handler:{ action in
                 //llamamos Al metodo eliminar de abajo
-                self.eliminar(cod: cod)
+                self.eliminar(cod: self.objId);
             })
             //agregamos el boton aceptar a la ventana
             ventana.addAction(botonAceptar)
