@@ -131,4 +131,11 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "formPostsSegue" {
+            let view = segue.destination as! PublicViewController;
+            view.cellType = (self.idCategoria, self.nombre, self.tipo);
+        }
+    }
 }
