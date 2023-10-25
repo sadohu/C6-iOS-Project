@@ -182,7 +182,6 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
             listaPublic = [];
             listaPublic = filterList;
         }
-        print("filterList", filterList);
         self.tvPublicacion.reloadData()
     }
     
