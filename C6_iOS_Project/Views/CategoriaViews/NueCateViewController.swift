@@ -38,6 +38,12 @@ class NueCateViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         listCategoriasFromApi = data.sorted{ $0.idCategoria < $1.idCategoria };
         categorias = CustomConfig.getCategoriasSection(listCategoriasFromApi);
         cboCategoria.reloadAllComponents();
+        if(categorias.count > 0){
+            let fristCategoria = categorias[0];
+            idCategoria = fristCategoria.idCategoria;
+            nombre = fristCategoria.nombre;
+            tipo = fristCategoria.tipo;
+        }
     }
 
     @IBAction func btnGuardar(_ sender: UIButton) {
