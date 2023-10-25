@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ControladorComentario: NSObject {
 
@@ -34,7 +35,33 @@ class ControladorComentario: NSObject {
         } //fin de registrarComentario
     
     //Método para listar Comentario, valor de retorno va a ser arreglo de ComentEntity
-        func listarComentario()->  [ComentEntity]{
+    //new
+    func listarComentario(forUID uid: String) -> [ComentEntity] {
+        //PASO 1:crear objeto de la clase AppDelegate y casteamos a AppDelegate
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        //PASO 2: acceder a la base de datos, y con viewContext para tener acceso a la bd ComentarioModel
+        let contextoBD =  delegate.persistentContainer.viewContext
+        // Aquí debes realizar una consulta en CoreData para obtener los comentarios que coincidan con el UID proporcionado.
+        // Crea una NSPredicate para filtrar los comentarios por el UID.
+        let predicate = NSPredicate(format: "uid == %@", uid)
+        
+        // Crea una solicitud de búsqueda con la entidad ComentEntity y aplica el predicado.
+        let fetchRequest: NSFetchRequest<ComentEntity> = ComentEntity.fetchRequest()
+        fetchRequest.predicate = predicate
+        
+        do {
+            // Realiza la consulta en CoreData y devuelve los resultados.
+            let comentarios = try contextoBD.fetch(fetchRequest)
+            return comentarios
+        } catch {
+            print("Error al buscar comentarios: \(error)")
+            return []
+        }
+    }
+
+    //
+       
+    /*func listarComentario()->  [ComentEntity]{
             //PASO 1:crear objeto de la clase AppDelegate y casteamos a AppDelegate
             let delegate = UIApplication.shared.delegate as! AppDelegate
             //PASO 2: acceder a la base de datos, y con viewContext para tener acceso a la bd ComentarioModel
@@ -60,6 +87,7 @@ class ControladorComentario: NSObject {
             return resultado
             
         } //fin de listarComentario
+    */
     
     //Metodo para actualizar, con un parametro bean de tipo ComentEntity
         func actualizarComentario(bean:ComentEntity){

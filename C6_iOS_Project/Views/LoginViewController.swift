@@ -13,7 +13,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtUsuario: UITextField!
     @IBOutlet weak var txtClave: UITextField!
     var clientMode : Bool = true;
-    
+    //
+    var data: AuthDataResult?  // Declare data as a class-level variable
+    //
+    //para UID
+    var uidFromLogin1 : String?
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -51,6 +56,9 @@ class LoginViewController: UIViewController {
                 if let data = result{
                     print("LOGIN CORRECTO")
                     //imprimimos el valor desde firebase el email y codigo de registro
+                    //asignamos a la variable global el valor
+                    self.data = data
+                    //
                     print(data.user.uid)
                     self.clientMode = (data.user.uid != "m56SHA4qGvQdu8bhsXuEc32aCeu2") ? true : false;
                     self.performSegue(withIdentifier: "loginMainSegue", sender: self);
@@ -66,6 +74,7 @@ class LoginViewController: UIViewController {
         if(segue.identifier == "loginMainSegue"){
             let view = segue.destination as! MainViewController;
             view.clientMode = self.clientMode;
+            view.uidFromLogin1=self.data?.user.uid;
         }
     }
 }//fin de LogViewController
