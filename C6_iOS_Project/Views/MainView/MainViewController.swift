@@ -9,16 +9,19 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataLoadedDelegate {
     @IBOutlet weak var tvCategorias: UITableView!
+    @IBOutlet weak var btnMenuAdmin: UIButton!
     var listFromApi : [Categoria] = [];
     var listCategoria : [Categoria] = [];
     var ids : [Int] = [];
     var nombre : [String] = [];
     var selectedItem : (Int, String, String) = (-1, "", "");
+    var clientMode : Bool = true;
     
     override func viewDidLoad() {
         super.viewDidLoad();
         tvCategorias.dataSource = self;
         tvCategorias.rowHeight = 200;
+        btnMenuAdmin.isHidden = clientMode;
     }
     
     func dataLoadedSuccessfully(data: [Categoria]) {

@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtUsuario: UITextField!
     @IBOutlet weak var txtClave: UITextField!
+    var clientMode : Bool = true;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,7 @@ class LoginViewController: UIViewController {
                     print("LOGIN CORRECTO")
                     //imprimimos el valor desde firebase el email y codigo de registro
                     print(data.user.uid)
+                    self.clientMode = (data.user.uid != "m56SHA4qGvQdu8bhsXuEc32aCeu2") ? true : false;
                     self.performSegue(withIdentifier: "loginMainSegue", sender: self);
                 }//fin de if
                 //si entra al else es que no tiene data
@@ -59,4 +61,9 @@ class LoginViewController: UIViewController {
                 }//fin de else
             } //fin de Auth
         }//fin de loginFirebase
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let view = segue.destination as! MainViewController;
+        view.clientMode = self.clientMode;
+    }
 }//fin de LogViewController
