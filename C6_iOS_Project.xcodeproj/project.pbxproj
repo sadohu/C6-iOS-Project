@@ -119,9 +119,9 @@
 		41688A812AE5D44C00760A57 /* CategoriaViews */ = {
 			isa = PBXGroup;
 			children = (
-				41688A822AE5D49B00760A57 /* EditarCateViewController.swift */,
-				41688A842AE5D4AC00760A57 /* NueCateViewController.swift */,
 				41688A862AE5D4BC00760A57 /* ApiViewController.swift */,
+				41688A842AE5D4AC00760A57 /* NueCateViewController.swift */,
+				41688A822AE5D49B00760A57 /* EditarCateViewController.swift */,
 				41688A8B2AE5D90300760A57 /* MTableViewCell.swift */,
 			);
 			path = CategoriaViews;
@@ -141,9 +141,9 @@
 		41688A8E2AE5E8D300760A57 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				41688A952AE5EEC200760A57 /* MainViewController.swift */,
 				41688A8F2AE5E91800760A57 /* MainItemTableViewCell.swift */,
 				41688A932AE5EACD00760A57 /* MainTableCollectionViewCell.swift */,
-				41688A952AE5EEC200760A57 /* MainViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";

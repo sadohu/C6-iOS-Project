@@ -28,20 +28,7 @@ class MainItemTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColl
         item.tipo.text = listCategoria[indexPath.row].tipo;
         
         let img = listCategoria[indexPath.row].imagen
-        if let url = URL(string: img) {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    print("Error al cargar la imagen: \(error)")
-                } else if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        item.imagen.image = image;
-                    }
-                }
-            }
-            task.resume()
-        } else {
-            print("Error en tu url manito")
-        }
+        CustomConfig.loadImage(fromURL: img, into: item.imagen);
         return item;
     }
     

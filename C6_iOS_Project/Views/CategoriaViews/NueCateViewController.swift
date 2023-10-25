@@ -7,30 +7,56 @@
 
 import UIKit
 
-class NueCateViewController: UIViewController {
-
+class NueCateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, DataLoadedDelegate{
+    @IBOutlet weak var lblNombre: UILabel!
     @IBOutlet weak var txtNombre: UITextField!
     @IBOutlet weak var txtTipo: UITextField!
     @IBOutlet weak var txtImagen: UITextView!
+    @IBOutlet weak var lblCboCategoria: UILabel!
+    @IBOutlet weak var cboCategoria: UIPickerView!
+    @IBOutlet weak var switchNewCategoria: UISwitch!
     
-    
+    var listCategoriasFromApi : [Categoria] = [];
+    var categorias : [Categoria] = [];
+    var idCategoria : Int = 0;
+    var nombre = "", tipo = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        cboCategoria.delegate = self;
+        cboCategoria.dataSource = self;
+        lblNombre.isHidden = false;
+        txtNombre.isHidden = false;
+        lblCboCategoria.isHidden = true;
+        cboCategoria.isHidden = true;
+        CustomConfig.getCategoriasFromApi(delegate: self);
     }//fin de viewDidload
     
+    func dataLoadedSuccessfully(data: [Categoria]) {
+        listCategoriasFromApi = [];
+        categorias = [];
+        listCategoriasFromApi = data.sorted{ $0.idCategoria < $1.idCategoria };
+        categorias = CustomConfig.getCategoriasSection(listCategoriasFromApi);
+        cboCategoria.reloadAllComponents();
+    }
 
     @IBAction func btnGuardar(_ sender: UIButton) {
         //leermos lo de las cajas para eso creamos variables para coger la data de las cajas
-        var nom,tipo,img:String
+        var nom = "", tipo = "", img = "";
+        
+        if(switchNewCategoria.isOn){
+            let x = categorias.last!.idCategoria + 1;
+            self.idCategoria = x;
+            nom = txtNombre.text ?? ""
+        }
+        if(!switchNewCategoria.isOn){
+            nom = self.nombre;
+        }
         //asociamos las cajas con las variables
-        nom=txtNombre.text ?? ""
         tipo=txtTipo.text ?? ""
         img=txtImagen.text ?? ""
         //variable de tipo Medicamento struct
-        let cat = Categoria(id: 0, idCategoria: 1, nombre: nom, tipo: tipo, imagen: img)
+        let cat = Categoria(id: 0, idCategoria: self.idCategoria, nombre: nom, tipo: tipo, imagen: img);
         //llamamos al metodo
         grabarCategoria(bean: cat)
     }//fin de btnGuardar
@@ -88,6 +114,40 @@ class NueCateViewController: UIViewController {
         }//fin de grabarMedicamento
     
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == cboCategoria {
+            return categorias.count;
+        }
+        return 0;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == cboCategoria {
+            let row = (cboCategoria.selectedRow(inComponent: 0));
+            self.idCategoria = categorias[row].idCategoria;
+            self.nombre = categorias[row].nombre;
+            return categorias[row].nombre;
+        }
+        return nil;
+    }
+    
+    @IBAction func switchListener(_ sender: UISwitch) {
+        if(sender.isOn){
+            lblNombre.isHidden = false;
+            txtNombre.isHidden = false;
+            lblCboCategoria.isHidden = true;
+            cboCategoria.isHidden = true;
+        }else{
+            lblNombre.isHidden = true;
+            txtNombre.isHidden = true;
+            lblCboCategoria.isHidden = false;
+            cboCategoria.isHidden = false;
+        }
+    }
     
     
     

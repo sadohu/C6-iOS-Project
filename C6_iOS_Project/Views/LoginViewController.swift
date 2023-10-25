@@ -63,7 +63,9 @@ class LoginViewController: UIViewController {
         }//fin de loginFirebase
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let view = segue.destination as! MainViewController;
-        view.clientMode = self.clientMode;
+        if(segue.identifier == "loginMainSegue"){
+            let view = segue.destination as! MainViewController;
+            view.clientMode = self.clientMode;
+        }
     }
 }//fin de LogViewController
