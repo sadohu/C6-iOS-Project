@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h41-Sm-o2q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pzj-YU-oD5">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
@@ -431,19 +431,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yad-We-EW0">
-                                <rect key="frame" x="20" y="569" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hBv-P5-Nff">
-                                <rect key="frame" x="27" y="616" width="350" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dH-ef-MNC">
+                                <rect key="frame" x="0.0" y="565" width="393" height="73"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bU2-N9-buS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -451,11 +442,11 @@
                     <navigationItem key="navigationItem" id="OjQ-au-We2"/>
                     <connections>
                         <outlet property="cboCategoria" destination="fz5-mH-X6L" id="zDe-Az-0pU"/>
+                        <outlet property="cboTipo" destination="3dH-ef-MNC" id="P5f-3P-Pgw"/>
                         <outlet property="lblTitulo" destination="RFs-V0-ySP" id="uAS-oZ-Mx7"/>
                         <outlet property="txtDecripGeneral" destination="LPS-g1-3lq" id="89w-Wg-c1H"/>
                         <outlet property="txtDescrip" destination="zy0-2L-exg" id="xSi-HW-adg"/>
                         <outlet property="txtDescripcionTitulo" destination="aB9-CQ-Z5p" id="8zF-dU-qsm"/>
-                        <outlet property="txtTipoCateg" destination="hBv-P5-Nff" id="IAS-ze-PAc"/>
                         <outlet property="txtUbicacion" destination="RWx-PJ-B69" id="bms-20-4Cp"/>
                         <segue destination="5FD-1S-typ" kind="show" identifier="formPostsSegue" id="Wuq-yL-gbb"/>
                     </connections>
@@ -1205,7 +1196,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="abl-mR-I0I"/>
+        <segue reference="Wuq-yL-gbb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
