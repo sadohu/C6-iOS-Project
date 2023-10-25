@@ -9,16 +9,19 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataLoadedDelegate {
     @IBOutlet weak var tvCategorias: UITableView!
+    @IBOutlet weak var btnMenuAdmin: UIButton!
     var listFromApi : [Categoria] = [];
     var listCategoria : [Categoria] = [];
     var ids : [Int] = [];
     var nombre : [String] = [];
     var selectedItem : (Int, String, String) = (-1, "", "");
+    var userLogged = "";
     
     override func viewDidLoad() {
         super.viewDidLoad();
         tvCategorias.dataSource = self;
         tvCategorias.rowHeight = 200;
+        showAdminButton();
     }
     
     func dataLoadedSuccessfully(data: [Categoria]) {
@@ -94,5 +97,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.ids.append(id.idCategoria);
             self.nombre.append(id.nombre)
         }
+    }
+    
+    func showAdminButton(){
+        btnMenuAdmin.isHidden = (self.userLogged == "m56SHA4qGvQdu8bhsXuEc32aCeu2") ? false : true;
     }
 }

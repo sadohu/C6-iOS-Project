@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pzj-YU-oD5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Feb-BO-rRK">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
@@ -93,7 +93,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="mainGray"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqs-dV-38Q">
                                 <rect key="frame" x="42" y="577" width="309" height="42"/>
@@ -258,10 +258,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-du-rO0">
-                                <rect key="frame" x="301" y="65" width="76" height="35"/>
+                                <rect key="frame" x="220" y="60" width="157" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="filemenu.and.selection" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="filemenu.and.selection" catalog="system" title="Admin menu"/>
                                 <connections>
                                     <action selector="btnMenuAdmin:" destination="h41-Sm-o2q" eventType="touchUpInside" id="Kfz-94-s9r"/>
                                 </connections>
@@ -272,6 +272,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="EIe-Y8-spL"/>
                     <connections>
+                        <outlet property="btnMenuAdmin" destination="mLS-du-rO0" id="BmQ-hw-Cto"/>
                         <outlet property="tvCategorias" destination="hSy-w4-PEs" id="IQN-M0-M1g"/>
                         <segue destination="eAo-5W-hq5" kind="show" identifier="mainPerfilSegue" id="pEH-4V-XIa"/>
                         <segue destination="5FD-1S-typ" kind="show" identifier="mainPublicacionSegue" id="abl-mR-I0I"/>
@@ -1196,7 +1197,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wuq-yL-gbb"/>
+        <segue reference="abl-mR-I0I"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
