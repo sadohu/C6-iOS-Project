@@ -127,12 +127,17 @@ class NueCateViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == cboCategoria {
-            let row = (cboCategoria.selectedRow(inComponent: 0));
-            self.idCategoria = categorias[row].idCategoria;
-            self.nombre = categorias[row].nombre;
             return categorias[row].nombre;
         }
         return nil;
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == cboCategoria {
+            let row = (cboCategoria.selectedRow(inComponent: 0));
+            self.idCategoria = categorias[row].idCategoria;
+            self.nombre = categorias[row].nombre;
+        }
     }
     
     @IBAction func switchListener(_ sender: UISwitch) {
