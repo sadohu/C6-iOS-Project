@@ -15,13 +15,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var ids : [Int] = [];
     var nombre : [String] = [];
     var selectedItem : (Int, String, String) = (-1, "", "");
-    var userLogged = "";
+    var clientMode : Bool = true;
     
     override func viewDidLoad() {
         super.viewDidLoad();
         tvCategorias.dataSource = self;
         tvCategorias.rowHeight = 200;
-        showAdminButton();
+        btnMenuAdmin.isHidden = clientMode;
     }
     
     func dataLoadedSuccessfully(data: [Categoria]) {
@@ -97,9 +97,5 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.ids.append(id.idCategoria);
             self.nombre.append(id.nombre)
         }
-    }
-    
-    func showAdminButton(){
-        btnMenuAdmin.isHidden = (self.userLogged == "m56SHA4qGvQdu8bhsXuEc32aCeu2") ? false : true;
     }
 }
