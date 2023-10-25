@@ -15,6 +15,10 @@ class ComentarioViewController: UIViewController,UITableViewDataSource,UITableVi
     var listaComentario:[ComentEntity]=[]
     //variable global para indexPath
         var posComent = -1
+    //Obtengo uid
+    var uidFromLogin4:String!
+    var uidFromLogin5: String = ""
+    //
     //Outlets y referencias de la tabla
     @IBOutlet weak var tvComentario: UITableView!
     //-----Agregamos este para refres -----Agregamos este para reload
@@ -26,7 +30,8 @@ class ComentarioViewController: UIViewController,UITableViewDataSource,UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         //Llenar arreglo con metodo listarComentario
-              listaComentario = ControladorComentario().listarComentario()
+              //listaComentario = ControladorComentario().listarComentario()
+        listaComentario = ControladorComentario().listarComentario(forUID: uidFromLogin4)
               //Indicando a la tabla que trabaja con origen de datos, this=self (esta clase)
         tvComentario.dataSource=self
               //esto con la intencion de que se haga click para accion debemos poner delegate
@@ -89,13 +94,21 @@ class ComentarioViewController: UIViewController,UITableViewDataSource,UITableVi
                destino.bean=listaComentario[posComent]
                
            } //fin de if
+           else if segue.identifier == "nuevo" {
+                   // Si el segue tiene el identificador "nuevo", pasamos a la pantalla NuevoComentViewController
+               let des=segue.destination as! NuevoComentViewController
+               des.u=self.uidFromLogin4
+                   // Aquí debes agregar el código necesario para preparar el segue a NuevoComentViewController
+               }
+           
        }//fin de prepare
     
     //-----------------------------     //-----Agregamos este para reload
           @objc func updateData() {
             // Aquí obtener los datos actualizados
               //Llenar arreglo con metodo listarComentario
-              listaComentario = ControladorComentario().listarComentario()
+           //   listaComentario = ControladorComentario().listarComentario()
+              listaComentario = ControladorComentario().listarComentario(forUID: uidFromLogin4)
             // Recargar la tabla
             self.tvComentario.reloadData()
             // Terminar animación refresh

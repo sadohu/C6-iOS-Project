@@ -20,13 +20,19 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
         //Crear objeto de acceso a la base de datos
         var BD = Firestore.firestore()
         
+    
+    
         //-----Agregamos este para refres -----Agregamos este para reload
            let refreshControl = UIRefreshControl();
            //---------------
     var cellType = (-1, "", "");
     var textToFind = "";
     var typeFilterButton : Bool = true;
+    //
+    var uidFromLogin2:String!
+    var uidFromLogin3:String = ""
     
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +92,7 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 let destino=segue.destination as! DatosPubliViewController
                 //accedemos a atributos
                 destino.data=listaPublic[pos]
+                destino.uidFromLogin3 = self.uidFromLogin2
                 
             } //fin de if
         }//fin de prepare

@@ -9,6 +9,8 @@ import UIKit
 
 class CustomConfig {
     
+    static let URL_API : String = "https://1379-45-5-69-231.ngrok-free.app";
+    
     static func configureViewController(_ viewController: UIViewController) {
         // Oculta el navigationItem en este ViewController
         viewController.navigationItem.setHidesBackButton(true, animated: false); // Para ocultar el botón de retroceso
@@ -37,7 +39,7 @@ class CustomConfig {
     static func getCategoriasFromApi(delegate : DataLoadedDelegate){
         var list : [Categoria] = [];
         
-        let URLAPI = "https://9b87-45-5-69-231.ngrok-free.app/categoria/listar";
+        let URLAPI = self.URL_API + "/categoria/listar";
         let url = URL(string: URLAPI);
         let task = URLSession.shared.dataTask(with: url!) { data, urlResponse, error in
             do{
