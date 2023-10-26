@@ -20,13 +20,13 @@ class OptionsViewController: UIViewController {
     
     @IBAction func btnBuscoTrabajo(_ sender: UIButton) {
         tipoFormulario = 1
-        tituloFormulario = "Busco trabajo"
+        tituloFormulario = "NECESITO UN EXPERTO PARA..."
         performSegue(withIdentifier: "formView", sender: self)
     }
     
     @IBAction func btnBrindoTrabajo(_ sender: UIButton) {
         tipoFormulario = 2
-        tituloFormulario = "Brindo trabajo"
+        tituloFormulario = "BRINDO SERVICIO EN..."
         performSegue(withIdentifier: "formView", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

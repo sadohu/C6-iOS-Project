@@ -119,7 +119,7 @@ class FormsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             "descrippublicaper": descripPer ?? "",
             "descrippubli": descripcion ?? "",
             "tipo": self.tipo,
-            "comentinteres" : self.nombre,
+            "comentinteres" : "",
             "idCategoria": self.idCategoria,
             //"comentinteres": selectedCategory
         ]

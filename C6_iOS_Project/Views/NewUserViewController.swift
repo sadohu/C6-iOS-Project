@@ -56,21 +56,25 @@ class NewUserViewController: UIViewController {
     //creamos funcion o metodo(registrar) para grabar, le enviamos nombrecompleto, edad,email y clave
     //para luego obtener la autenticacion UID pasandole otro metodo
     func registrar(nombreCompleto:String,edad:Int,correo:String,clave:String){
-        //Grabar la autenticacion, en withEmail le pasamos el parametro correo y en password clave
-        Auth.auth().createUser(withEmail: correo, password: clave){ result,error in
-        //data almacena lo de result , osea si esto es correcto result tiene datos y almacenado en data
-            if let data=result{
-                //retorna UID de la autenticacion registrada y lo almacenamos en el uid
-                let uid=data.user.uid
-                //llamamos a registrarUsuario pasandole lo demas adicionando el uid
-                self.registrarUsuario(nombreC: nombreCompleto, edad: edad, uid: uid)
-            }//fin de if
-            else{
-                //si hubiese error llamados al metodo de ventanamensaje con self y le
-                //pasamos el mensaje
-                self.ventanaMensaje(men: "Error en el registro de la autenticacion")
-            }//fin de else
-        }//fin de Auth
+        if(switchTermsOfUse.isOn){
+            //Grabar la autenticacion, en withEmail le pasamos el parametro correo y en password clave
+            Auth.auth().createUser(withEmail: correo, password: clave){ result,error in
+            //data almacena lo de result , osea si esto es correcto result tiene datos y almacenado en data
+                if let data=result{
+                    //retorna UID de la autenticacion registrada y lo almacenamos en el uid
+                    let uid=data.user.uid
+                    //llamamos a registrarUsuario pasandole lo demas adicionando el uid
+                    self.registrarUsuario(nombreC: nombreCompleto, edad: edad, uid: uid)
+                }//fin de if
+                else{
+                    //si hubiese error llamados al metodo de ventanamensaje con self y le
+                    //pasamos el mensaje
+                    self.ventanaMensaje(men: "Error en el registro de la autenticacion")
+                }//fin de else
+            }//fin de Auth
+        }else{
+            self.ventanaMensaje(men: "Acepte los terminos y condiciones.")
+        }
     }//fin de registrarAutenticacion
     
     //creamos metodo para grabar en firestore database pasandole de parametros

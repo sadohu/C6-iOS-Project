@@ -31,7 +31,7 @@ class DatosPubliViewController: UIViewController {
         lblTitulo.text=String(data.titulopubli)
         lblPublicaPer.text=String(data.nombrepublicaper)
         //lblDescripPer.text=String(data.descrippublicaper)
-        txtDescripPer.text=data.descrippublicaper
+        txtDescripPer.text="Descripción: " + data.descrippubli + "\nObsevaciones: " + data.descrippublicaper;
         txtComentario.text=data.comentinteres
        
     }//fin de viewDidLoad
