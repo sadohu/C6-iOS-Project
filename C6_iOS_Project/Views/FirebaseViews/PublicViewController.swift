@@ -19,7 +19,7 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
         var pos = -1
         //Crear objeto de acceso a la base de datos
         var BD = Firestore.firestore()
-        
+    @IBOutlet weak var lblCategoria: UILabel!
     
     
         //-----Agregamos este para refres -----Agregamos este para reload
@@ -36,6 +36,7 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblCategoria.text = cellType.1 + ": " + cellType.2;
         //llamar al metodo de listadoPublic
                listadoPublic()
                //llamamos a la tabla para que traiga la data

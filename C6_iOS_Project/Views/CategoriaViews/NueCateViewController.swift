@@ -23,6 +23,8 @@ class NueCateViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtImagen.layer.borderWidth = 1.0
+        txtImagen.layer.cornerRadius = 5.0
         cboCategoria.delegate = self;
         cboCategoria.dataSource = self;
         lblNombre.isHidden = false;
