@@ -184,7 +184,7 @@ class PublicViewController: UIViewController,UITableViewDataSource,UITableViewDe
             listaPublic = filterList;
         }else{
             filterList = listaPublic.filter {(
-                $0.idCategoria ==  cellType.0 && // idCategoria
+//                $0.idCategoria ==  cellType.0 && // idCategoria
                 $0.tipo == cellType.2 // Tipo
             )}
             listaPublic = [];
